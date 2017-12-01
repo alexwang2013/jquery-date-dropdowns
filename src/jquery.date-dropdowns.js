@@ -433,7 +433,7 @@
             for (var i = maxYear; i >= minYear; i--) {
                 option = document.createElement('option');
                 option.setAttribute('value', i);
-                option.appendChild(document.createTextNode(i));
+                option.appendChild(document.createTextNode(i+'年'));
                 dropdown.append(option);
             }
 
@@ -464,7 +464,7 @@
                     suffix = (number % 100 === 13) ? th : rd;
                     break;
                 default:
-                    suffix = 'th';
+                    suffix = th;
                     break;
             }
 
