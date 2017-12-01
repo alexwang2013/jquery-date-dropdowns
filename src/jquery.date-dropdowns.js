@@ -23,6 +23,7 @@
             dayLabel: 'Day',
             monthLabel: 'Month',
             yearLabel: 'Year',
+            yearSuffixValue: '',
             monthLongValues: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthShortValues: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             initialDayMonthYearValues: ['Day', 'Month', 'Year'],
@@ -433,7 +434,7 @@
             for (var i = maxYear; i >= minYear; i--) {
                 option = document.createElement('option');
                 option.setAttribute('value', i);
-                option.appendChild(document.createTextNode(i));
+                option.appendChild(document.createTextNode(i + this.config.yearSuffixValue));
                 dropdown.append(option);
             }
 
@@ -464,7 +465,7 @@
                     suffix = (number % 100 === 13) ? th : rd;
                     break;
                 default:
-                    suffix = 'th';
+                    suffix = th;
                     break;
             }
 
